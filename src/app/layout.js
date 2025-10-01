@@ -15,7 +15,7 @@ const geistMono = localFont({
 });
 
 const serif = localFont({
-  src: "./fonts/NotoserifJP-Regular.ttf",
+  src: "./serifkhandaan.ttf",
   variable: "--font-serif",
   weight: "100 900",
 });
