@@ -1,7 +1,9 @@
-import About from "@/components/about";
+
 import DemoHero from "@/components/DemoHero";
 import Count from "@/components/Count";
-import TargetSection from "@/components/target";
+import TargetSection from "@/components/Target";
+import AboutPage from "@/components/About";
+
 
 
 
@@ -11,7 +13,7 @@ export default function Home() {
     <DemoHero/>
     <Count/>
      <TargetSection/>
-    <About/>
+    <AboutPage/>
     </>
   );
 }
