@@ -2,6 +2,7 @@
 import Autoplay from "embla-carousel-autoplay"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel"
 import { motion } from "framer-motion"
+import Image from "next/image"
 
 const slides = [
   {
@@ -87,7 +88,7 @@ const DemoHero = () => {
                       whileHover={{ scale: 1.03 }}
                       className="relative w-80 h-80 sm:w-96 sm:h-[450px] lg:w-[450px]   rounded-3xl overflow-hidden shadow-xl ring-1 ring-black/5"
                     >
-                      <img
+                      <Image
                         src={slide.image}
                         alt={slide.title}
                         className="w-full h-full object-cover"

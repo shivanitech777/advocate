@@ -49,8 +49,8 @@ export default function AboutPage() {
             and building long-term trust with those I serve.
           </p>
           <p className="text-lg leading-relaxed">
-            Whether you're facing a personal dispute, business matter, or
-            criminal charge, I'm committed to protecting your rights and guiding
+            Whether you&apos;pre facing a personal dispute, business matter, or
+            criminal charge, I&apos;m committed to protecting your rights and guiding
             you with professionalism and care.
           </p>
         </motion.div>
