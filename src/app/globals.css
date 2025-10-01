@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-:root { /* soft light */ /* deep slate */
-  --primary: #7b3bff; /* royal violet */
-  --accent: #B69D75; /* warm gold */
+:root { 
+  --primary: #7b3bff; 
+  --accent: #B69D75; 
 }
 
 
@@ -18,9 +18,20 @@ body {
     text-wrap: balance;
   }
 }
+@font-face {
+  font-family: 'SerifKhandaaan';
+  src: url('/fonts/serifkhandaaan.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'SerifKhandaaan', sans-serif;
+}
 
 .font-serif {
   font-family: var(--font-serif);
+  
 }
 
 
