@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -18,7 +17,7 @@ export default function Header() {
       initial={{ y: -40, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ type: "spring", stiffness: 120, damping: 18 }}
-  className="w-full bg-white/60 dark:bg-royal-900/70 backdrop-blur sticky top-0 z-40 border-b border-black/[.06]"
+      className="w-full bg-white/60 dark:bg-royal-900/70   backdrop-blur sticky top-0 z-40 border-b border-black/[.06]"
     >
       <div className="w-full mx-auto px-6 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center ">
@@ -34,9 +33,10 @@ export default function Header() {
               Advocate
             </span>
             <br />
-            <span className="text-sm text-gray-600 dark:text-gray-300 font-serif">Legal Counsel & Advisor</span>
+            <span className="text-sm text-gray-600 dark:text-gray-300 font-serif">
+              Legal Counsel & Advisor
+            </span>
           </div>
-        
         </Link>
 
         <nav>

@@ -1,6 +1,8 @@
 "use client"
+
 import React from "react"
-import { Scale, Gavel, FileText } from "lucide-react" // Professional law-related icons
+import { motion } from "framer-motion"
+import { Scale, Gavel, FileText } from "lucide-react"
 
 const TargetSection = () => {
   const items = [
@@ -21,33 +23,68 @@ const TargetSection = () => {
     },
   ]
 
+  
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  }
+
+  const itemAnim = {
+    hidden: { opacity: 0, y: 30 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  }
+
   return (
-    <section className="w-full bg-[#fdfcf7] text-[#1a1a1a] py-16 px-6">
+    <section className="w-full bg-[#fdfcf7] text-[#1a1a1a] py-20 px-6">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-[#1a1a1a]">
+       
+        <motion.h2
+          className="text-3xl md:text-4xl font-bold text-[#1a1a1a]"
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           Where We Are <span className="text-[#e28615]">Targeted</span>
-        </h2>
-        <p className="mt-4 text-gray-700 max-w-2xl mx-auto">
+        </motion.h2>
+
+        <motion.p
+          className="mt-4 text-gray-700 max-w-2xl mx-auto"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
           As a Law Firm, our objectives are clear. We strive to provide services 
           that ensure long-term, effective, and professional solutions for our clients.
-        </p>
+        </motion.p>
 
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <motion.div
+          className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8"
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+        >
           {items.map((item, i) => (
-            <div
+            <motion.div
               key={i}
-              className="bg-white border border-[#a69b8c] p-8 rounded-2xl shadow-sm hover:shadow-md transition"
+              variants={itemAnim}
+              className="bg-white border border-[#d28314] p-8 rounded-2xl shadow-sm hover:shadow-md transition-all hover:-translate-y-1"
             >
-              <div
-                className="w-14 h-14 flex items-center justify-center rounded-full bg-[#c19a6b]/10 text-[#c19a6b] mb-6"
-              >
+              <div className="w-14 h-14 flex items-center justify-center rounded-full bg-[#a38214]/10 text-black mb-6">
                 {item.icon}
               </div>
               <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
               <p className="text-gray-600">{item.desc}</p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   )

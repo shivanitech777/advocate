@@ -1,109 +1,129 @@
-"use client"
-import React from 'react'
-import Link from 'next/link'
-import { motion } from 'framer-motion'
-    
+"use client";
+import { motion } from "framer-motion";
+import { FaFacebookF, FaTwitter, FaPinterestP, FaLinkedinIn } from "react-icons/fa";
+import { FiSend, FiPhone, FiMail, FiClock, FiGlobe } from "react-icons/fi";
 
-const Footer = () => {
+export default function Footer() {
   return (
-    <motion.footer
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7 }}
-      className="bg-white dark:bg-royal-900 border-t border-gray-200 dark:border-royal-800"
-    >
-      <div className="container mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="space-y-4">
-            <h3 className="text-2xl font-semibold text-royal-900 dark:text-white">Advocate Shivani</h3>
-            <p className="text-gray-600 dark:text-gray-300 max-w-sm">
-              Experienced legal counsel offering compassionate advocacy, clear strategy, and strong courtroom
-              representation for individuals and small businesses.
-            </p>
-
-            <div className="flex items-center gap-4 mt-2">
-              <a href="mailto:contact@advocate.com" className="text-royal-700 dark:text-gray-200 hover:text-primary">
-                contact@advocate.com
-              </a>
-              <span className="text-gray-400">•</span>
-              <a href="tel:+1234567890" className="text-royal-700 dark:text-gray-200 hover:text-primary">
-                +1 (234) 567-890
-              </a>
-            </div>
-          </div>
-
-          <div className="flex justify-between md:justify-center md:col-span-1">
+    <footer className="bg-[#0b1526] text-gray-300 py-14">
+      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-10">
+        
+       
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="flex items-center gap-3 mb-4">
+            <div className="text-gold-500 text-4xl">🏛️</div>
             <div>
-              <h4 className="text-lg font-medium text-royal-900 dark:text-white mb-3">Quick links</h4>
-              <ul className="space-y-2 text-gray-700 dark:text-gray-300">
-                <li>
-                  <Link href="/">
-                    <span className="hover:text-primary">Home</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/about">
-                    <span className="hover:text-primary">About</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services">
-                    <span className="hover:text-primary">Services</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/contact">
-                    <span className="hover:text-primary">Contact</span>
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div className="hidden md:block">
-             
+              <h2 className="text-2xl font-bold text-white">ADVOKAT</h2>
+              <p className="text-sm text-gold-500 tracking-wide">HOUSE OF LAWYERS</p>
             </div>
           </div>
+          <p className="text-sm leading-relaxed">
+            We denounce with righteous indignation and dislike men who are so
+            beguiled and demoralized by the charms.
+          </p>
+          <p className="text-sm mt-3">
+            Righteous indignation and dislike men who are so the charms.
+          </p>
 
-          <div className="flex flex-col items-start md:items-end">
-            <h4 className="text-lg font-medium text-royal-900 dark:text-white mb-3">Office</h4>
-            <address className="not-italic text-gray-600 dark:text-gray-300">
-              123 Legal Avenue
-              <br />
-              Suite 400, City, State
-            </address>
+        
+          <div className="flex gap-3 mt-5">
+            {[FaFacebookF, FaTwitter, FaPinterestP, FaLinkedinIn].map(
+              (Icon, idx) => (
+                <motion.a
+                  key={idx}
+                  whileHover={{ scale: 1.2, rotate: 5 }}
+                  className="p-2 bg-[#1b2335] rounded-full hover:bg-gold-500 transition-colors cursor-pointer"
+                >
+                  <Icon size={16} />
+                </motion.a>
+              )
+            )}
+          </div>
+        </motion.div>
 
-            <div className="flex items-center gap-3 mt-4">
-              <a
-                href="#"
-                aria-label="LinkedIn"
-                className="text-gray-500 hover:text-indigo-600 transition"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M4.98 3.5C4.98 4.6 4.07 5.5 2.98 5.5S0.98 4.6 0.98 3.5 1.89 1.5 2.98 1.5 4.98 2.4 4.98 3.5zM0 8h6v16H0V8zm9 0h5.5v2.2h.1c.8-1.5 2.8-3.1 5.8-3.1C25.6 7.1 26 10.2 26 14.5V24h-6v-8.5c0-2-0.04-4.6-2.9-4.6-2.9 0-3.3 2.2-3.3 4.4V24H9V8z" />
-                </svg>
-              </a>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <h3 className="text-lg font-semibold text-white mb-4 border-l-2 border-gold-500 pl-3">
+            Quick Contact Info
+          </h3>
+          <p className="text-sm mb-4">
+            We denounce with righteous indignation and dislike men who are so beguiled.
+          </p>
+          <ul className="space-y-3 text-sm">
+            <li className="flex items-center gap-2"><FiGlobe /> new Delhi cannught -palace</li>
+            <li className="flex items-center gap-2"><FiPhone /> +1 0524 145 2042</li>
+            <li className="flex items-center gap-2"><FiMail /> support@rstheme.com</li>
+            <li className="flex items-center gap-2"><FiClock /> Mon - Fri: 09:00 - 1:00</li>
+          </ul>
+        </motion.div>
 
-              <a href="#" aria-label="Twitter" className="text-gray-500 hover:text-indigo-600 transition">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M24 4.6c-.9.4-1.8.7-2.8.8 1-0.6 1.7-1.5 2-2.6-.9.6-1.9 1-3 1.2C19 2 17.8 1.5 16.5 1.5c-2.6 0-4.6 2.2-4.6 4.8 0 .4 0 .9.1 1.3C8 7.4 4.3 5.6 1.7 2.9c-.4.7-.6 1.5-.6 2.4 0 1.7.8 3.3 2.1 4.2-.8 0-1.6-.2-2.3-.6v.1c0 2.2 1.6 4 3.7 4.4-.4.1-.8.1-1.3.1-.3 0-.6 0-.9-.1.6 2 2.4 3.4 4.5 3.4-1.6 1.3-3.6 2.1-5.7 2.1H2c2 1.3 4.3 2 6.8 2 8.2 0 12.7-6.9 12.7-12.8v-.6c.9-.6 1.6-1.3 2.2-2.2-.8.4-1.6.6-2.5.7C23 6.4 23.6 5.5 24 4.6z" />
-                </svg>
-              </a>
-
-              <a href="#" aria-label="Facebook" className="text-gray-500 hover:text-indigo-600 transition">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M22 12c0-5.5-4.5-10-10-10S2 6.5 2 12c0 5 3.7 9.1 8.5 9.9v-7h-2.6V12H10.5V9.7c0-2.6 1.5-4 3.8-4 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.7-1.6 1.5V12h2.7l-.4 2.9h-2.3v7C18.3 21.1 22 17 22 12z" />
-                </svg>
-              </a>
+       
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          <h3 className="text-lg font-semibold text-white mb-4 border-l-2 border-gold-500 pl-3">
+            Latest News
+          </h3>
+          <div className="space-y-4 text-sm">
+            <div className="flex gap-3">
+              <img src="/hii.jpg" alt="news" className="w-14 h-14 object-cover rounded" />
+              <div>
+                <p className="text-gold-500">Best Education Law and Training</p>
+                <span className="text-xs text-gray-400">29 october 2025</span>
+              </div>
+            </div>
+            <div className="flex gap-3">
+              <img src="/blinndfolded.jpg" alt="news" className="w-14 h-14 object-cover rounded" />
+              <div>
+                <p className="text-gold-500">Flexible Working Hours</p>
+                <span className="text-xs text-gray-400">october 30 2025</span>
+              </div>
+            </div>
+            <div className="flex gap-3">
+              <img src="/p.jpg" alt="news" className="w-14 h-14 object-cover rounded" />
+              <div>
+                <p className="text-gold-500">The Top Law Students</p>
+                <span className="text-xs text-gray-400">october 21 2025</span>
+              </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="mt-10 pt-6 border-t border-gray-200 dark:border-gray-800 flex flex-col md:flex-row items-center justify-between text-sm text-gray-500">
-          <p>© {new Date().getFullYear()} Advocate Shivani. All rights reserved.</p>
-          <p className="mt-3 md:mt-0">Designed with care • Privacy Policy</p>
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+        >
+          <h3 className="text-lg font-semibold text-white mb-4 border-l-2 border-gold-500 pl-3">
+            Subscribe to Our Newsletter
+          </h3>
+          <p className="text-sm">
+            We denounce with righteous indignation and dislike men who are so beguiled.
+          </p>
+          <p className="text-sm mt-3">
+            Righteous indignation and dislike men who are so the charms.
+          </p>
+          <div className="flex mt-5">
+            <input
+              type="email"
+              placeholder="Email Address"
+              className="w-full px-4 py-2 bg-black rounded-l-md text-sm focus:outline-none"
+            />
+            <button className="px-4 bg-gold-900 rounded-r-md hover:bg-gold-600 transition-colors">
+              <FiSend />
+            </button>
+          </div>
+        </motion.div>
       </div>
-    </motion.footer>
-  )
+    </footer>
+  );
 }
-
-export default Footer
