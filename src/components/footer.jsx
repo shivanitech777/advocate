@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { FaFacebookF, FaTwitter, FaPinterestP, FaLinkedinIn } from "react-icons/fa";
 import { FiSend, FiPhone, FiMail, FiClock, FiGlobe } from "react-icons/fi";
 
@@ -75,21 +76,21 @@ export default function Footer() {
           </h3>
           <div className="space-y-4 text-sm">
             <div className="flex gap-3">
-              <img src="/hii.jpg" alt="news" className="w-14 h-14 object-cover rounded" />
+              <Image src="/hii.jpg" alt="news" className="w-14 h-14 object-cover rounded" />
               <div>
                 <p className="text-gold-500">Best Education Law and Training</p>
                 <span className="text-xs text-gray-400">29 october 2025</span>
               </div>
             </div>
             <div className="flex gap-3">
-              <img src="/blinndfolded.jpg" alt="news" className="w-14 h-14 object-cover rounded" />
+              <Image src="/blinndfolded.jpg" alt="news" className="w-14 h-14 object-cover rounded" />
               <div>
                 <p className="text-gold-500">Flexible Working Hours</p>
                 <span className="text-xs text-gray-400">october 30 2025</span>
               </div>
             </div>
             <div className="flex gap-3">
-              <img src="/p.jpg" alt="news" className="w-14 h-14 object-cover rounded" />
+              <Image src="/p.jpg" alt="news" className="w-14 h-14 object-cover rounded" />
               <div>
                 <p className="text-gold-500">The Top Law Students</p>
                 <span className="text-xs text-gray-400">october 21 2025</span>
